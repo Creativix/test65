@@ -4,7 +4,75 @@
 
 {% block body %}
     <h1>Tournament</h1>
-
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        p {
+            text-align: center;
+            color: #888;
+        }
+        .custom-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s ease;
+        }
+        .custom-link:hover {
+            border-bottom: 2px solid #007bff;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;    
+            transition: background-color 0.3s ease;
+        }
+        .custom-button:hover {
+            background-color: #45a049;
+        }
+    </style>
     <table class="table">
         <tbody>
             <tr>
@@ -29,10 +97,12 @@
             </tr>
         </tbody>
     </table>
+    <table class="table">
+    <div class="container">
+   <td> <a href="{{ path('app_tournament_index') }}" class="custom-link">back to list</a> </td>
 
-    <a href="{{ path('app_tournament_index') }}">back to list</a>
+    <td><a href="{{ path('app_tournament_edit', {'id': tournament.id}) }}" class="custom-link">edit</a></td>
 
-    <a href="{{ path('app_tournament_edit', {'id': tournament.id}) }}">edit</a>
-
-    {{ include('tournament/_delete_form.html.twig') }}
+   <td>  {{ include('tournament/_delete_form.html.twig') }}</td>
+    </table>
 {% endblock %}

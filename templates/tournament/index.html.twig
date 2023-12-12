@@ -54,7 +54,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            
         }
         .custom-button {
             display: inline-block;
@@ -107,12 +107,13 @@
         {% endfor %}
         </tbody>
     </table>
+    <table class="table">
 <div class="container">
-    <a href="{{ path('app_tournament_new') }}" class="custom-link">Create new</a>
+   <td> <a href="{{ path('app_tournament_new') }}" class="custom-link">Create new</a></td>
     </div>
-<a href="{{ path('app_acceuil_index') }}" class="custom-link">Retour a la page d'acceuil</a>
+<td> <a href="{{ path('app_acceuil_index') }}" class="custom-link">Retour a la page d'acceuil</a> </td>
     
-    
+    </table>
 {% endblock %}
 
 
