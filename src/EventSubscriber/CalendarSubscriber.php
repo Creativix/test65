@@ -66,6 +66,7 @@ class CalendarSubscriber implements EventSubscriberInterface
                     'id' => $booking->getId(),
                 ])
             );
+            
 
             // finally, add the event to the CalendarEvent to fill the calendar
             $calendar->addEvent($bookingEvent);
